@@ -66,20 +66,23 @@ function defaultState() {
 
 async function ensureTags() {
   const existing = await habitica('/tags');
-  const byName = {};
-  existing.forEach((t) => (byName[t.name] = t.id));
+  const existingByName = {};
+  existing.forEach((t) => (existingByName[t.name] = t.id));
 
+  const result = {}; // only ever holds the 5 stat tags, never the user's other tags
   for (const name of STAT_TAGS) {
-    if (!byName[name]) {
+    if (existingByName[name]) {
+      result[name] = existingByName[name];
+    } else {
       const created = await habitica('/tags', {
         method: 'POST',
         body: JSON.stringify({ name }),
       });
-      byName[name] = created.id;
+      result[name] = created.id;
       console.log(`Created missing tag: ${name}`);
     }
   }
-  return byName; // { vitality: 'tag-uuid', ... }
+  return result; // { vitality: 'tag-uuid', ... } — exactly 5 entries, always
 }
 
 function awardXP(state, statId, amount) {
