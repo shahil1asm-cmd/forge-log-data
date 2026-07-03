@@ -14,13 +14,15 @@
     },
     "focus": {
       "level": 1,
-      "xp": 0
+      "xp": 30
     },
     "spiritualEssence": {
       "level": 1,
       "xp": 0
     }
   },
-  "awardedDaily": {},
+  "awardedDaily": {
+    "90db4fba-1ff1-48dc-965e-34cdf9b87c9e": "2026-07-03"
+  },
   "awardedTodo": {}
 }
