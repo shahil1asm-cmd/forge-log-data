@@ -1,10 +1,25 @@
 {
   "stats": {
-    "vitality": { "level": 1, "xp": 0 },
-    "strength": { "level": 1, "xp": 0 },
-    "mentalAgility": { "level": 1, "xp": 0 },
-    "focus": { "level": 1, "xp": 0 },
-    "spiritualEssence": { "level": 1, "xp": 0 }
+    "vitality": {
+      "level": 1,
+      "xp": 0
+    },
+    "strength": {
+      "level": 1,
+      "xp": 0
+    },
+    "mentalAgility": {
+      "level": 1,
+      "xp": 0
+    },
+    "focus": {
+      "level": 1,
+      "xp": 0
+    },
+    "spiritualEssence": {
+      "level": 1,
+      "xp": 0
+    }
   },
   "awardedDaily": {},
   "awardedTodo": {}
