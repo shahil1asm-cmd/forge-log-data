@@ -2,8 +2,8 @@ name: Forge Log Sync
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
-  workflow_dispatch: {}
+    - cron: '*/5 * * * *'   # every 5 minutes — GitHub's documented floor, can't go faster
+  workflow_dispatch: {}       # for instant on-demand runs instead of waiting on cron
 
 permissions:
   contents: write
