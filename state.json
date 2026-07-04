@@ -13,8 +13,8 @@
       "xp": 0
     },
     "focus": {
-      "level": 1,
-      "xp": 30
+      "level": 2,
+      "xp": 10
     },
     "spiritualEssence": {
       "level": 1,
@@ -22,7 +22,7 @@
     }
   },
   "awardedDaily": {
-    "90db4fba-1ff1-48dc-965e-34cdf9b87c9e": "2026-07-03"
+    "90db4fba-1ff1-48dc-965e-34cdf9b87c9e": "2026-07-04"
   },
   "awardedTodo": {}
 }
