@@ -1,20 +1,20 @@
 {
   "stats": {
     "vitality": {
-      "level": 2,
-      "xp": 30
+      "level": 3,
+      "xp": 10
     },
     "strength": {
-      "level": 1,
-      "xp": 40
+      "level": 2,
+      "xp": 30
     },
     "mentalAgility": {
       "level": 1,
-      "xp": 20
+      "xp": 40
     },
     "focus": {
       "level": 2,
-      "xp": 30
+      "xp": 80
     },
     "spiritualEssence": {
       "level": 1,
@@ -22,11 +22,11 @@
     }
   },
   "awardedDaily": {
-    "90db4fba-1ff1-48dc-965e-34cdf9b87c9e": "2026-07-04",
-    "6575bbd6-19c5-48f0-9b8b-df2fbf762188": "2026-07-04",
-    "b7a244f4-1e6e-4971-9f8b-bd999548d36b": "2026-07-04",
-    "2d56c137-390d-47d2-a4ca-2383039f5746": "2026-07-04",
-    "d9458798-cded-4fa7-ada3-f53f1cfff145": "2026-07-04"
+    "90db4fba-1ff1-48dc-965e-34cdf9b87c9e": "2026-07-05",
+    "6575bbd6-19c5-48f0-9b8b-df2fbf762188": "2026-07-05",
+    "b7a244f4-1e6e-4971-9f8b-bd999548d36b": "2026-07-05",
+    "2d56c137-390d-47d2-a4ca-2383039f5746": "2026-07-05",
+    "d9458798-cded-4fa7-ada3-f53f1cfff145": "2026-07-05"
   },
   "awardedTodo": {}
 }
