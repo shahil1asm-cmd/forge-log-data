@@ -1,25 +1,25 @@
 {
   "stats": {
     "vitality": {
-      "level": 4,
-      "xp": 180
+      "level": 5,
+      "xp": 60
     },
     "strength": {
       "level": 3,
-      "xp": 90
+      "xp": 130
     },
     "mentalAgility": {
       "level": 2,
-      "xp": 70
+      "xp": 90
     },
     "focus": {
       "level": 4,
-      "xp": 30
+      "xp": 80
     },
     "spiritualEssence": {
       "level": 1,
       "xp": 0
     }
   },
-  "lastSynced": "2026-07-09T22:59:20.635Z"
+  "lastSynced": "2026-07-10T00:10:46.534Z"
 }
