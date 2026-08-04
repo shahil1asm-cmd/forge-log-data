@@ -1,16 +1,16 @@
 {
   "stats": {
     "vitality": {
-      "level": 6,
-      "xp": 290
+      "level": 7,
+      "xp": 30
     },
     "strength": {
       "level": 5,
-      "xp": 60
+      "xp": 100
     },
     "mentalAgility": {
       "level": 4,
-      "xp": 100
+      "xp": 120
     },
     "focus": {
       "level": 6,
@@ -21,5 +21,5 @@
       "xp": 30
     }
   },
-  "lastSynced": "2026-08-03T23:37:00.561Z"
+  "lastSynced": "2026-08-04T01:03:59.832Z"
 }
