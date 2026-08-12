@@ -18,6 +18,7 @@ const STATS_PATH = path.join(__dirname, 'stats.json');
 const STAT_TAGS = ['vitality', 'strength', 'mentalAgility', 'focus', 'spiritualEssence'];
 
 const DIFFICULTY_XP = { 0.1: 10, 1: 20, 1.5: 30, 2: 40 };
+const MAX_RETRIES = 4;
 
 if (!USER_ID || !API_TOKEN) {
   console.error('Missing HABITICA_USER_ID or HABITICA_API_TOKEN env vars.');
@@ -32,13 +33,29 @@ const headers = {
 };
 
 async function habitica(pathSuffix, opts = {}) {
-  const res = await fetch(`${BASE}${pathSuffix}`, { headers, ...opts });
-  if (!res.ok) {
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt += 1) {
+    const res = await fetch(`${BASE}${pathSuffix}`, { headers, ...opts });
+    if (res.ok) {
+      const json = await res.json();
+      return json.data;
+    }
+
     const body = await res.text().catch(() => '');
+    if ((res.status === 429 || res.status >= 500) && attempt < MAX_RETRIES) {
+      const retryAfterHeader = res.headers.get('retry-after');
+      const retryAfterSeconds = Number(retryAfterHeader);
+      const backoffSeconds =
+        Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0 ? retryAfterSeconds : Math.min(2 ** attempt, 30);
+      console.warn(
+        `Habitica API ${res.status} on ${pathSuffix}; retrying in ${backoffSeconds}s (attempt ${attempt + 1}/${MAX_RETRIES})`
+      );
+      await new Promise((resolve) => setTimeout(resolve, backoffSeconds * 1000));
+      continue;
+    }
+
     throw new Error(`Habitica API ${res.status} on ${pathSuffix}: ${body}`);
   }
-  const json = await res.json();
-  return json.data;
+  throw new Error(`Habitica API retries exhausted on ${pathSuffix}`);
 }
 
 function xpNeeded(level) {
