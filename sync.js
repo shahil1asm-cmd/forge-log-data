@@ -41,7 +41,11 @@ async function habitica(pathSuffix, opts = {}) {
     }
 
     const body = await res.text().catch(() => '');
-    if ((res.status === 429 || res.status >= 500) && attempt < MAX_RETRIES) {
+    const isEdge403 =
+      res.status === 403 &&
+      body.includes('<title>403 Forbidden</title>') &&
+      body.includes('Your client does not have permission to get URL');
+    if ((res.status === 429 || res.status >= 500 || isEdge403) && attempt < MAX_RETRIES) {
       const retryAfterHeader = res.headers.get('retry-after');
       const retryAfterSeconds = Number(retryAfterHeader);
       const backoffSeconds =

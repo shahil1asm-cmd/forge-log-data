@@ -2,7 +2,7 @@ name: Forge Log Sync
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # every 5 minutes — GitHub's documented floor, can't go faster
+    - cron: '*/30 * * * *'  # every 30 minutes to reduce Habitica API throttling/edge blocks
   workflow_dispatch: {}       # for instant on-demand runs instead of waiting on cron
 
 permissions:
